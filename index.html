@@ -1,0 +1,116 @@
+<!-- Declarations -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MasjidNOW</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div id="top-bar">
+    <label id="currentTime">Current Time</label>
+    <label id="currentDate">Current Date</label>
+    <label id="currentWeather">Weather</label>
+    <label id="mosqueName">Mosque Name</label>
+    <label id="wifiStatus">WiFi Status</label>
+    <label id="hijriDate">Hijri Date</label>
+    <label id="sunriseTime">Sunrise Time</label>
+    <label id="sunsetTime">Sunset Time</label>
+  </div>
+
+  <!-- Notification Bar -->
+  <div id="notification-bar">
+    <img id="left-decoration1" src="assets/decoration1.webp" alt="Image Alt">
+    <span id="notificationText">Your notification text here</span>
+    <img id="right-decoration1" src="assets/decoration1.webp" alt="Image Alt">
+  </div>
+
+  <div id="prayer-table">
+    <!-- Header row (row 1 of 8) -->
+    <div class="prayer-row header" id="headerrow">
+      <div class="col prayeremoji" id="header-emoji"></div>
+      <div class="col prayername" id="header-name">SALAH</div>
+      <div class="col prayerstart" id="header-start">STARTS</div>
+      <div class="col prayeriqamah" id="header-iqamah">IQAMAH</div>
+    </div>
+
+    <!-- 7 prayer data rows (rows 2 to 8) -->
+    <div class="prayer-row" id="fajrrow">
+      <div class="col prayeremoji" id="fajr-emoji">🌤</div>
+      <div class="col prayername" id="fajr-name">FAJR</div>
+      <div class="col prayerstart" id="fajr-start">5:30AM</div>
+      <div class="col prayeriqamah" id="fajr-iqamah">6:00AM</div>
+    </div>
+
+    <div class="prayer-row" id="dhuhrrow">
+      <div class="col prayeremoji" id="dhuhr-emoji">🔅</div>
+      <div class="col prayername" id="dhuhr-name">DHUHR</div>
+      <div class="col prayerstart" id="dhuhr-start">2:00 PM</div>
+      <div class="col prayeriqamah" id="dhuhr-iqamah">2:30PM</div>
+    </div>
+
+    <div class="prayer-row" id="asrrow">
+      <div class="col prayeremoji" id="asr-emoji">☁️</div>
+      <div class="col prayername" id="asr-name">ASR</div>
+      <div class="col prayerstart" id="asr-start">6:00PM</div>
+      <div class="col prayeriqamah" id="asr-iqamah">6:30PM</div>
+    </div>
+
+    <div class="prayer-row" id="maghribrow">
+      <div class="col prayeremoji" id="maghrib-emoji">🌥️</div>
+      <div class="col prayername" id="maghrib-name">MAGHRIB</div>
+      <div class="col prayerstart" id="maghrib-start">9:15PM</div>
+      <div class="col prayeriqamah" id="maghrib-iqamah">9:30PM</div>
+    </div>
+
+    <div class="prayer-row" id="isharow">
+      <div class="col prayeremoji" id="isha-emoji">☾</div>
+      <div class="col prayername" id="isha-name">ISHA</div>
+      <div class="col prayerstart" id="isha-start">10:45PM</div>
+      <div class="col prayeriqamah" id="isha-iqamah">11:05PM</div>
+    </div>
+
+    <div class="prayer-row" id="jumua1row">
+      <div class="col prayeremoji" id="jumua1-emoji">📿</div>
+      <div class="col prayername" id="jumua1-name">JUM'UA 1</div>
+      <div class="col prayerstart" id="jumua1-start">1:00PM</div>
+      <div class="col prayeriqamah" id="jumua1-iqamah">1:30PM</div>
+    </div>
+
+    <div class="prayer-row" id="jumua2row">
+      <div class="col prayeremoji" id="jumua2-emoji">📿</div>
+      <div class="col prayername" id="jumua2-name">JUM'UA 2</div>
+      <div class="col prayerstart" id="jumua2-start">2:00PM</div>
+      <div class="col prayeriqamah" id="jumua2-iqamah">2:30PM</div>
+    </div>
+  </div>
+
+  <div id="media-area">
+    <img id="qr-code" src="assets/qrcode.webp" alt="QR Code Alt">
+    <label id="donation-prompt">Please Donate Using The QR Code Above</label>
+  </div>
+
+  <!-- Middle Countdown Bar -->
+  <div id="countdown-bar">
+    <img id="left-decoration2" src="assets/decoration1.webp" alt="Decoration Img Alt">
+    <label id="upcoming-prayer-name">MAGHRIB</label>
+    <label id="iqamah-in">IQAMAH IN</label>
+    <label id="upcoming-prayer-time">02:30:24</label>
+    <img id="right-decoration2" src="assets/decoration1.webp" alt="Decoration Img Alt">
+  </div>
+
+  <!-- Bottom Scrolling Text Bar -->
+  <div id="scrolling-bar">
+    <label id="scrolling-text">Hadiths will go here.</label>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
