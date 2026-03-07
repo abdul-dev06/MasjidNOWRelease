@@ -1,0 +1,422 @@
+body {
+  background-color: #FFFFF0;
+}
+
+/*The top bar*/
+#top-bar {
+  position: relative;
+  height: 15vh;
+  width: 100%;
+  background-color: white;
+  color: #222;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  box-sizing: border-box;
+  border-top-left-radius: 2vw;
+  border-top-right-radius: 2vw;
+}
+
+/*The Labels contained in the top bar*/
+#top-bar label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*Adjustment of the widths so they fill 100% inside the top bar*/
+#currentTime {
+  font-family: 'Libertinus Mono', monospace;
+  width: 23%;
+  font-size: 3vw !important;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f8f8f8;
+  color: #000000;
+  background-size: contain;
+  border-bottom-left-radius: 2vw;
+  border-top: 0.1vw solid #000000;
+  border-left: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#currentDate {
+  font-family: 'Quicksand', sans-serif;
+  width: 11%;
+  font-size: 1.8vw !important;
+  text-align: center;
+  background: linear-gradient(90deg, #f8f8f8, #67a584);
+  color: #000000;
+  border-top: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#currentWeather {
+  font-family: 'Quicksand', sans-serif;
+  width: 8%;
+  font-size: 2vw !important;
+  text-align: center;
+  background: linear-gradient(90deg, #67a584, #2E8B57);
+  color: #ffffff;
+  border-top: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#mosqueName {
+  width: 15%;
+  font-size: 4.5vw !important;
+  text-align: center;
+  font-weight: bold;
+  background-color: #2E8B57;
+  color: #ffffff;
+  border-top: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#wifiStatus {
+  font-family: 'Quicksand', sans-serif;
+  width: 8%;
+  font-size: 1.3vw !important;
+  text-align: center;
+  background: linear-gradient(90deg, #2E8B57, #67a584);
+  color: #ffffff;
+  border-top: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#hijriDate {
+  font-family: 'Quicksand', sans-serif;
+  width: 10%;
+  font-size: 1.3vw !important;
+  text-align: center;
+  background: linear-gradient(90deg, #67a584, #850042ab);
+  color: #ffffff;
+  border-top: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#sunriseTime {
+  font-family: 'Quicksand', sans-serif;
+  width: 12.5%;
+  font-size: 1.5vw !important;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  background-image: url('assets/sunrise.webp');
+  background-size: contain;
+  border-top: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+#sunsetTime {
+  font-family: 'Quicksand', sans-serif;
+  width: 12.5%;
+  font-size: 1.5vw !important;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  background-image: url('assets/sunset.webp');
+  background-size: contain;
+  border-top-right-radius: 2vw;
+  border-top: 0.1vw solid #000000;
+  border-right: 0.1vw solid #000000;
+  border-bottom: 0.1vw solid #000000;
+}
+
+/* ─────────────────────────────── */
+/* Side By Side                    */
+/* ─────────────────────────────── */
+#side-by-side-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5vw;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prayer Table */
+#prayer-table {
+  position: relative;
+  margin-top: 0.6vh;
+  width: 34.65vw;
+  /* resized to remove STARTS column space */
+  height: 62.5vh;
+  background-color: transparent;
+  overflow: hidden;
+  box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  border-top-left-radius: 2vw;
+  border-bottom-left-radius: 2vw;
+}
+
+/* Prayer Rows */
+.prayer-row {
+  display: flex;
+  height: 12.5%;
+  box-sizing: border-box;
+  border-bottom: 0.1vw solid #ddd;
+}
+
+/* Columns */
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+  padding: 0;
+  box-sizing: border-box;
+  border-right: 0.1vw solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Widths for columns (STARTS removed) */
+.prayeremoji {
+  width: 10%;
+}
+
+.prayername {
+  width: 35%;
+}
+
+.prayeriqamah {
+  width: 55%;
+}
+
+/* Header row styling */
+.prayer-row.header {
+  background-color: #2E8B57;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.6vw;
+}
+
+/* Highlighted row styling */
+.prayer-row.highlight {
+  background-color: #35a164;
+  color: #ffffff;
+  transition: background-color 0.9s ease;
+}
+
+/* Media Area (UPDATED: 35% image / 65% title + margins) */
+#media-area {
+  position: relative;
+  margin-top: 0.6vh;
+  width: 65.15vw;
+  height: 62.5vh;
+  background-color: #f8f8f8;
+  border: 0.1vw solid #000000;
+  box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  padding: 2vh 2vw;
+  /* gutter around image + text */
+  gap: 2vw;
+  /* space between image and text */
+
+  border-top-right-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+}
+
+/* Left side = image (35%) */
+#media-area .media-left {
+  flex: 0 0 35%;
+  height: 100%;
+  overflow: hidden;
+
+  border-radius: 1vw;
+  /* give the image container rounded corners */
+  box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.12);
+}
+
+/* Image fills its container */
+#eventImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* switch to contain if you want no cropping */
+  object-position: center;
+  display: block;
+
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Right side = title (65%) */
+#media-area .media-right {
+  flex: 0 0 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+  padding: 0;
+  /* padding handled by #media-area */
+}
+
+/* Title "card" with padding/margins */
+#eventTitle {
+  margin: 0;
+  width: 100%;
+  padding: 1.5vh 1.5vw;
+  /* space around text */
+  border-radius: 1vw;
+  background: transparent;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 2.3vw;
+  color: #222;
+  text-align: left;
+  line-height: 1.15;
+}
+
+#countdown-bar {
+  position: relative;
+  margin-top: 0.6vh;
+  width: 100%;
+  height: 9vh;
+  background-color: transparent;
+  box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.1);
+  border-radius: 0.1vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+#countdown-bar label {
+  font-family: "Quicksand", sans-serif;
+  flex-grow: 1;
+  display: flex;
+  font-weight: bold;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-top-left-radius: 2vw;
+  border-top-right-radius: 2vw;
+}
+
+#upcoming-prayer-name {
+  font-size: 4vw;
+  text-align: right;
+  background-color: #cd5c5c;
+  color: #ffffff;
+}
+
+#iqamah-in {
+  font-size: 1.8vw;
+  text-align: center;
+  background-color: #ffffff;
+  color: #cd5c5c;
+  font-style: italic;
+}
+
+#upcoming-prayer-time {
+  font-size: 4vw;
+  text-align: left;
+  background-color: #cd5b5b;
+  color: #ffffff;
+}
+
+#countdown-bar img {
+  width: 10%;
+  height: 100%;
+  object-fit: none;
+  border-top-left-radius: 2vw;
+  border-top-right-radius: 2vw;
+}
+
+/*The notification bar*/
+#notification-bar {
+  position: relative;
+  margin-top: 0.6vh;
+  width: 100%;
+  height: 4vh;
+  background-color: #cd5c5c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0vw solid #000000;
+  border-bottom-left-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+}
+
+/*The text in the notification bar*/
+#notificationText {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2vw;
+  color: #ffffff;
+  flex-grow: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+
+#scrolling-bar {
+  position: relative;
+  margin-top: 0.75vh;
+  width: 100%;
+  height: 5vh;
+  background-color: #f8f8f8;
+  box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.1);
+  border-radius: 0.1vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#scrolling-text {
+  font-size: 1.3vw;
+  font-family: "Quicksand", sans-serif;
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  position: relative;
+  left: 0;
+}
+
+/* Responsive scaling based on resolution*/
+@media (min-width: 1440px) {
+  #top-bar label {
+    font-size: 1.8vw;
+  }
+}
+
+@media (min-width: 2560px) {
+  #top-bar label {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  #top-bar label {
+    font-size: 3vw;
+  }
+}
